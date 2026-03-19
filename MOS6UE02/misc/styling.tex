@@ -1,0 +1,103 @@
+% custom command for external listings
+\def\source#1#2#3{ % language, caption, filename
+  \lstinputlisting[language=#1,caption=#2]{#3} 
+}
+% examples:
+% \source{xml}{\texttt{faces-config.xml}}{sources/faces-config.xml}
+% \source{java}{\texttt{beans.UserBean.java}}{sources/jsf/user/UserBean.java}
+
+% coloring of listings
+\definecolor{listinggray}{gray}{1.0}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{orange}{RGB}{240, 105, 12}
+\definecolor{green}{RGB}{156, 206, 43}
+
+% styling of listings
+\lstset{
+  % the base language of the code, if no other language is given (defines how certain keywords are colored)
+  %language=Java,
+  % fontsize of the code
+  basicstyle=\footnotesize\ttfamily\bfseries,
+  % disable line numbering
+  numbers=none,
+  % line number fontsize
+  numberstyle=\footnozesize,
+  % step for line numbers (incrementation)
+  stepnumber=1,
+  % line number distance from code
+  numbersep=5pt,
+  backgroundcolor=\color{white},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  % frame around the code
+  frame=single,
+  tabsize=2,
+  % caption position = bottom
+  captionpos=b,
+  breaklines=true,
+  breakatwhitespace=false,
+  % show the filename of files included with \lstinputlisting;
+  title=\lstname,
+  % line number style
+  numberstyle=\tiny\color{gray},
+  % keyword style
+  keywordstyle=\color{blue},
+  % comment style
+  commentstyle=\color{dkgreen},
+  % string literal style
+  stringstyle=\color{mauve},
+  % if you want to add a comment within your code
+  escapeinside={\%*}{*)},
+  % if you want to add more keywords to the set
+  morekeywords={*,...},
+  % places the correct apostrophes into lstlistings
+  upquote=true,
+  % to make mutated vowels (umlaute) writable in lstlistings
+  literate=
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1
+    {á}{{\'a}}1
+}
+
+% no indentation at first line of paragraph
+\parindent=0pt
+
+% 12pt space between paragraphs
+\parskip=12pt
+
+% forbid text from exceeding margins
+\sloppy
+
+% bigger headheight because of 12pt font size
+\setlength{\headheight}{15pt}
+
+% enable header and footer from fancyhdr
+\pagestyle{fancy}
+
+% styling of header
+\fancyhead[L]{\sffamily \author}
+%\fancyhead[C]{\sffamily \title}
+\fancyhead[R]{\sffamily \dateSubm}
+
+% styling of footer
+\fancyfoot[L]{\sffamily \subtitle}
+\fancyfoot[C]{}
+\fancyfoot[R]{\sffamily Page \thepage\ of \pageref{LastPage}}
+
+% look of hyperlinks & refs
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}

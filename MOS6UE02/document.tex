@@ -1,0 +1,60 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{misc/packages}
+\input{misc/commands}
+\input{misc/styling}
+\input{misc/global-definitions}
+
+% definitions
+\def\author{Mikolaj Milczek, Jonathan Rusche}
+\def\org{SIB23}
+\def\title{Eine Android-App dekompilieren}
+\def\subtitle{MOS6UE - UE02}
+\def\dateAddr{\DTMdisplaydate{2026}{03}{12}{-1}}
+\def\dateSubm{\DTMtoday}
+
+
+\begin{document}
+\sffamily
+\allsectionsfont{\sffamily}
+
+\input{textparts/titlepage}
+
+\tableofcontents
+\newpage
+\section{Identifizieren des Quellcodes für die Login-Aktivität}
+\textbf{Aktivitätsname:} space.hitchhacker.guide.LoginActivity
+
+\textbf{Funktionsname:} validatePin()
+
+\section{Ermitteln der Login-Pin}
+\textbf{PIN:} 0168
+
+\textbf{Erklärung:} Die Funktion sammelt die Eingaben aus allen 4 PIN-Feldern und fügt sie zu einem String zusammen. Dann wird geprüft, ob ein manueller PIN gesetzt wurde falls ja, wird der eingegebene PIN direkt mit dem gespeicherten verglichen.
+Falls kein manueller PIN gesetzt wurde, müssen zwei Bedingungen gleichzeitig erfüllt sein:
+
+\textbf{Bedingung 1:} Die gesamte 4-stellige Zahl wird um 2 Bits nach rechts verschoben, was einer Division durch 4 entspricht. Das Ergebnis muss 42 ergeben. Also: 168 / 4 = 42 → die Zahl ist 0168.
+
+\textbf{Bedingung 2:} (4. Ziffer - 2. Ziffer) * 3. Ziffer muss ebenfalls 42 ergeben. Also: (8 - 1) * 6 = 7 * 6 = 42
+Nur wenn beide Bedingungen wahr sind, wird der Login akzeptiert und die MainActivity gestartet.
+\newpage
+\section{Finden von Flags}
+\begin{center}
+\includegraphics[scale=0.5, width=\textwidth]{../images/image.png}
+\end{center}
+Flag 1: \textbf{flag\{i have a million ideas. they all point to certain death\}}
+
+Fundstelle: resources.arsc:/res/values/strings.xml (String-Name: diary\_entry4)
+
+Flag 2: \textbf{flag\{a\_nice\_cup\_of\_tea\}}
+
+Fundstelle: space.hitchhacker.guide.MainActivity in der Funktion onCreate(Bundle) via AppKt.getPrefs().setSharedPrefsFlag()
+
+Flag 3: \textbf{flag\{dont\_talk\_to\_me\_about\_life\}}
+
+Fundstelle: space.hitchhacker.guide.data.EncSharedPrefHelper in der Funktion getEncSharedPref, gespeichert als verschl\"usselter SharedPreference-Eintrag (this.ENCFLAG)
+
+Flag 4: \textbf{flag\{I think you ought to know I'm feeling very depressed\}}
+
+Fundstelle: space.hitchhacker.guide.ui.alerts.AlertsFragment -- in der Funktion onViewCreated(), ausgegeben \"uber Log.d("AlertsFragment", ...)
+\end{document}

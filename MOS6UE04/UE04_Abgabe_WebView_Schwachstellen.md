@@ -1,4 +1,4 @@
-# UE-04: Schwachstellen in WebViews ausnutzen – Hitchhacker-App
+# UE-04: Schwachstellen in WebViews ausnutzen
 
 ## Team
 - Jonathan Rusche

@@ -1,5 +1,7 @@
 # Protokoll: UE-04 – Schwachstellen in WebViews ausnutzen
 
+## Mikolaj Milczek & Jonathan Rusche
+
 ## App-Informationen
 
 - **App:** Hitchhacker Guide v3

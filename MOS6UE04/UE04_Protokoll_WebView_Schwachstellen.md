@@ -17,7 +17,7 @@ Die Datei `hitchhacker_v3.apk` wurde in JADX-GUI geöffnet. Nach dem Laden ersch
 Dort befinden sich mehrere Klassen. Die für den WebView relevante Klasse wurde durch Suche nach `WebView` im Code identifiziert.
 
 **Ergebnis:**
-- Klasse mit WebView-Implementierung: `[KLASSENNAME AUS JADX EINTRAGEN]`
+- Klasse mit WebView-Implementierung: `space.hitchhacker.guide.ui.guide.GuideFragment`
 - JavaScript-Interface-Klasse: `JInputs`
 
 ---

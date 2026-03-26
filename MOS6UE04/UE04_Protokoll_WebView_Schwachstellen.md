@@ -29,20 +29,18 @@ In der WebView-Klasse wurde die Methode gesucht, in der der WebView konfiguriert
 Folgende sicherheitsrelevante Einstellungen wurden im Quellcode gefunden:
 
 ```java
-// Zeile [NR]: JavaScript aktiviert
+// Zeile [50]: JavaScript aktiviert
 webView.getSettings().setJavaScriptEnabled(true);
 
-// Zeile [NR]: Dateizugriff erlaubt
+// Zeile [51]: JavaScript Interface registriert
+webView.addJavascriptInterface(new Interface(), "Wormhole");
+
+// Zeile [52]: Dateizugriff erlaubt
 webView.getSettings().setAllowFileAccess(true);
 
-// Zeile [NR]: Universeller Dateizugriff erlaubt
-webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
-
-// Zeile [NR]: JavaScript Interface registriert
-webView.addJavascriptInterface(new JInputs(), "[INTERFACE_NAME]");
+// Zeile [53]: Universeller Dateizugriff erlaubt
+webView.setWebViewClient(new WebViewClient(){...});
 ```
-
-> Die exakten Zeilennummern und den Interface-Namen aus JADX übernehmen.
 
 ---
 

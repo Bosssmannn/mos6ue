@@ -23,17 +23,17 @@ In der Methode `onViewCreated` der Klasse `GuideFragment` befinden sich folgende
 ```java
 webView.getSettings().setJavaScriptEnabled(true);
 ```
-→ Erlaubt die Ausführung von JavaScript im WebView.
+-> Erlaubt die Ausführung von JavaScript im WebView.
 
 ```java
 webView.getSettings().setAllowFileAccess(true);
 ```
-→ Erlaubt dem WebView, lokale Dateien über das `file://`-Protokoll zu laden.
+-> Erlaubt dem WebView, lokale Dateien über das `file://`-Protokoll zu laden.
 
 ```java
 webView.addJavascriptInterface(new Interface(), "Wormhole");
 ```
-→ Exponiert ein Java-Objekt namens `Wormhole` an JavaScript – aufrufbar von jeder geladenen Seite.
+-> Exponiert ein Java-Objekt namens `Wormhole` an JavaScript – aufrufbar von jeder geladenen Seite.
 
 ### Vorgehensweise: SharedPreferences-Datei laden
 

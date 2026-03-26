@@ -1,5 +1,9 @@
 # UE-04: Schwachstellen in WebViews ausnutzen – Hitchhacker-App
 
+## Team
+- Jonathan Rusche
+- Mikolaj Milczek
+
 ---
 
 ## Teil 1: Laden von lokalen Dateien im WebView (2P)

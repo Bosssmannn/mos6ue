@@ -1,4 +1,8 @@
-# Analyse der Datenspeicherung – Hitchhacker App (v3)
+# UE-05: Datenspeicherung analysieren
+
+## Team
+- Jonathan Rusche
+- Mikolaj Milczek
 
 ---
 
@@ -271,3 +275,10 @@ Suchanfragen im Klartext abgelegt – je nach Inhalt der Suchanfragen könnte di
 | FileHelper / search.txt | ❌ Nein | Verbesserungsbedarf |
 
 Die App zeigt ein uneinheitliches Sicherheitsniveau: Während sensible Authentifizierungsdaten (PIN) und Tagebucheinträge gut geschützt sind, werden Nutzerdaten inkl. Passwörter in einer unverschlüsselten Datenbank abgelegt – was ein erhebliches Sicherheitsrisiko darstellt.
+
+If your Markdown is in a file clear this content and drop your file into this editor.
+
+<sup style="display: inline-block;">**tip:** click on the pencil icon on the left to clear the editor)</sup>
+
+## GitHub flavoured styling by default
+We now use GitHub flavoured styling by default.

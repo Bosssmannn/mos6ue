@@ -152,7 +152,7 @@ ls /data/data/space.hitchhacker.guide/shared_prefs/
 cat /data/data/space.hitchhacker.guide/shared_prefs/*.xml
 ```
 
-**Erwartete Dateien:** Eine XML-Datei mit den Keys `sharedPrefsUsername`, `sharedPrefsUrl`, `sharedPrefsManualUrl`, `sharedPrefsFlag`. Der genaue Dateiname entspricht dem beim `getSharedPreferences()`-Aufruf übergebenen String (z. B. `space.hitchhacker.guide_preferences.xml` oder ein explizit gewählter Name).
+**Dateien:** Eine XML-Datei mit den Keys `sharedPrefsUsername`, `sharedPrefsUrl`, `sharedPrefsManualUrl`, `sharedPrefsFlag`. Der genaue Dateiname entspricht dem beim `getSharedPreferences()`-Aufruf übergebenen String (z. B. `space.hitchhacker.guide_preferences.xml` oder ein explizit gewählter Name).
 
 ### 2.2 EncryptedSharedPreferences
 
@@ -164,7 +164,7 @@ cat /data/data/space.hitchhacker.guide/shared_prefs/*.xml
 cat /data/data/space.hitchhacker.guide/shared_prefs/secret_shared_prefs.xml
 ```
 
-**Erwartete Datei:** `secret_shared_prefs.xml` – Inhalt ist verschlüsselt (Base64-kodierte Ciphertext-Blobs, kein Klartext lesbar). Zusätzlich werden Tink-Keyset-Dateien für Schlüsselverwaltung angelegt:
+**Datei:** `secret_shared_prefs.xml` – Inhalt ist verschlüsselt (Base64-kodierte Ciphertext-Blobs, kein Klartext lesbar). Zusätzlich werden Tink-Keyset-Dateien für Schlüsselverwaltung angelegt:
 
 ```bash
 # Tink-Keysets (automatisch von EncryptedSharedPreferences angelegt)
@@ -180,7 +180,7 @@ cat /data/data/space.hitchhacker.guide/shared_prefs/__androidx_security_crypto_e
 
 # Dateien
 ls /data/data/space.hitchhacker.guide/databases/
-# → diary.db  diary.db-shm  diary.db-wal
+# -> diary.db  diary.db-shm  diary.db-wal
 
 # Datei ist verschlüsselt – direktes Lesen ergibt Binärdaten
 hexdump -C /data/data/space.hitchhacker.guide/databases/diary.db | head -4
@@ -195,7 +195,7 @@ hexdump -C /data/data/space.hitchhacker.guide/databases/diary.db | head -4
 
 # Datei
 ls /data/data/space.hitchhacker.guide/databases/
-# → users.db
+# -> users.db
 
 # Im Klartext lesbar!
 sqlite3 /data/data/space.hitchhacker.guide/databases/users.db
@@ -203,7 +203,7 @@ sqlite3 /data/data/space.hitchhacker.guide/databases/users.db
 SELECT * FROM users;
 ```
 
-**Erwartetes Ergebnis:** Die Tabelle `users` ist im Klartext auslesbar, inkl. Passwörter.
+**Ergebnis:** Die Tabelle `users` ist im Klartext auslesbar, inkl. Passwörter.
 
 ### 2.5 FileHelper (search.txt)
 
@@ -229,7 +229,7 @@ cat /data/data/space.hitchhacker.guide/files/search.txt
 
 ## 3. Sicherheitsbewertung
 
-### Was die App richtig macht ✅
+### Was die App richtig macht
 
 **Verschlüsselung des Tagebuchs (DiaryDatabase):**  
 Die sensibelsten Nutzerdaten – persönliche Tagebucheinträge – werden in einer SQLCipher-Datenbank gespeichert. Das ist eine gute Wahl, da der gesamte Datenbankinhalt auf Dateiebene AES-verschlüsselt ist.
@@ -242,7 +242,7 @@ Alle Daten liegen unter `/data/data/space.hitchhacker.guide/`, also im app-priva
 
 ---
 
-### Was verbessert werden sollte ⚠️
+### Was verbessert werden sollte
 
 **`users.db` ist unverschlüsselt:**  
 Die `UserDatabase` mit Tabelle `users` (inkl. Passwörtern) ist eine Standard-SQLite-Datenbank ohne Verschlüsselung. Ein Root-Angreifer oder eine bösartige App mit ausreichenden Rechten kann Benutzerdaten und Passwörter im Klartext auslesen. Diese Datenbank sollte ebenfalls mit SQLCipher verschlüsselt werden.
@@ -273,5 +273,3 @@ Suchanfragen im Klartext abgelegt – je nach Inhalt der Suchanfragen könnte di
 | DiaryDatabase / diary.db | ✅ Ja (SQLCipher) | Gut |
 | UserDatabase / users.db | ❌ Nein | Kritisch |
 | FileHelper / search.txt | ❌ Nein | Verbesserungsbedarf |
-
-Die App zeigt ein uneinheitliches Sicherheitsniveau: Während sensible Authentifizierungsdaten (PIN) und Tagebucheinträge gut geschützt sind, werden Nutzerdaten inkl. Passwörter in einer unverschlüsselten Datenbank abgelegt – was ein erhebliches Sicherheitsrisiko darstellt.

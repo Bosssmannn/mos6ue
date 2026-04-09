@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Titel"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Inhalt"
+            android:inputType="textMultiLine"
+            android:gravity="top" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSaveInternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Intern speichern" />
+
+    <Button
+        android:id="@+id/btnSaveExternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extern speichern" />
+
+    <Button
+        android:id="@+id/btnSaveEncrypted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verschlüsselt speichern" />
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.example.notizenapp-merged_res-29:/layout_activity_add_note.xml.flat",
+        "source": "com.example.notizenapp-main-31:/layout/activity_add_note.xml"
+    },
+    {
+        "merged": "com.example.notizenapp-merged_res-29:/layout_activity_view_note.xml.flat",
+        "source": "com.example.notizenapp-main-31:/layout/activity_view_note.xml"
+    },
+    {
+        "merged": "com.example.notizenapp-merged_res-29:/layout_activity_main.xml.flat",
+        "source": "com.example.notizenapp-main-31:/layout/activity_main.xml"
+    }
+]

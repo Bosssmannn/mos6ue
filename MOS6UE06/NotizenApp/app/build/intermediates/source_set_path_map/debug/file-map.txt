@@ -23,10 +23,10 @@ com.example.notizenapp-jetified-core-ktx-1.9.0-21 C:\Users\mikol\.gradle\caches\
 com.example.notizenapp-jetified-security-crypto-1.1.0-alpha06-22 C:\Users\mikol\.gradle\caches\transforms-3\c403413b3884ad82977bb710eec14afe\transformed\jetified-security-crypto-1.1.0-alpha06\res
 com.example.notizenapp-jetified-appcompat-resources-1.6.1-23 C:\Users\mikol\.gradle\caches\transforms-3\dcc78b2f4a3d879e4e36052f1930563b\transformed\jetified-appcompat-resources-1.6.1\res
 com.example.notizenapp-jetified-viewpager2-1.0.0-24 C:\Users\mikol\.gradle\caches\transforms-3\fb49cafff1a3e07b9d521461cce18e18\transformed\jetified-viewpager2-1.0.0\res
-com.example.notizenapp-pngs-25 C:\Users\mikol\Documents\GitHub\NotizenApp\app\build\generated\res\pngs\debug
-com.example.notizenapp-resValues-26 C:\Users\mikol\Documents\GitHub\NotizenApp\app\build\generated\res\resValues\debug
-com.example.notizenapp-packageDebugResources-27 C:\Users\mikol\Documents\GitHub\NotizenApp\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.notizenapp-packageDebugResources-28 C:\Users\mikol\Documents\GitHub\NotizenApp\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.notizenapp-merged_res-29 C:\Users\mikol\Documents\GitHub\NotizenApp\app\build\intermediates\merged_res\debug
-com.example.notizenapp-debug-30 C:\Users\mikol\Documents\GitHub\NotizenApp\app\src\debug\res
-com.example.notizenapp-main-31 C:\Users\mikol\Documents\GitHub\NotizenApp\app\src\main\res
+com.example.notizenapp-pngs-25 C:\Users\mikol\Documents\GitHub\mos6ue\MOS6UE06\NotizenApp\app\build\generated\res\pngs\debug
+com.example.notizenapp-resValues-26 C:\Users\mikol\Documents\GitHub\mos6ue\MOS6UE06\NotizenApp\app\build\generated\res\resValues\debug
+com.example.notizenapp-packageDebugResources-27 C:\Users\mikol\Documents\GitHub\mos6ue\MOS6UE06\NotizenApp\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.notizenapp-packageDebugResources-28 C:\Users\mikol\Documents\GitHub\mos6ue\MOS6UE06\NotizenApp\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.notizenapp-merged_res-29 C:\Users\mikol\Documents\GitHub\mos6ue\MOS6UE06\NotizenApp\app\build\intermediates\merged_res\debug
+com.example.notizenapp-debug-30 C:\Users\mikol\Documents\GitHub\mos6ue\MOS6UE06\NotizenApp\app\src\debug\res
+com.example.notizenapp-main-31 C:\Users\mikol\Documents\GitHub\mos6ue\MOS6UE06\NotizenApp\app\src\main\res
